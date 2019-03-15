@@ -114,6 +114,7 @@ def delete_by_days(listFiles, days): # not tested
         if not zipfile.is_zipfile(lf) and lf.endswith('.zip'):
             print('corrupted ZIP!')
 
+
         #z = zipfile.ZipFile('xml_healer.zip', 'r')
 
         if curFilePeriod > days:
