@@ -3,7 +3,6 @@
 
 import os, os.path, time, ctypes, zipfile
 
-
 # Квоты по умолчанию (безопасные)
 save_quotes = {
     'quota_by_days' : 'no',
@@ -22,11 +21,6 @@ def del_qommas(string):
     l = len(string.strip())
     pos = string.find("'")
     return str(string[pos+1:l-1].strip())
-
-
-def get_bytes_in_type(bytes, type):
-    bytes /= 1024 ** int(TYPES[type])
-    return float('{:.2f}'.format(bytes))
 
 
 def get_configure(file_cfg):
@@ -127,14 +121,6 @@ def delete_by_days(listFiles, days): # not tested
 
 
 
-
-
-
-
-
-
-
-
             deleted = listFiles.pop()
             if os.path.isfile(str(deleted)):
                 os.remove(str(deleted))
@@ -186,7 +172,7 @@ def main():
     conf = get_configure(FILE_CFG)
     print(conf)
     mainDirList = get_list_of_files(conf['paths'])
-    print(conf)
+
     for curDir in mainDirList:
         curDirFilesList =[]
         for curFile in curDir[2]:
